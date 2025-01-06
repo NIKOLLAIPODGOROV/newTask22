@@ -1,0 +1,9 @@
+.card-product {
+  padding: 20px;
+  height: 400px;
+  width: 300px;
+  border: 1px solid #c1c1c1;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 3px 4px 6px -5px #131313;
+}

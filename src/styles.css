@@ -1,0 +1,22 @@
+body {
+  position: relative;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.accordion-button::after {
+  filter: invert();
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-icon);
+}
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.invalid-feedback {
+  display: block;
+}

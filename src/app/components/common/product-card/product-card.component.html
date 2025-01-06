@@ -1,0 +1,22 @@
+<div class="card-product d-flex align-items-center justify-content-center flex-column">
+  <div class="text-center">
+    <img src="{{product.image}}" alt="tea-{{product.id}}" class="text-center img-fluid">
+  </div>
+  <div class="mb-1">
+    <div class="fw-bold">
+      {{product.title}}
+    </div>
+    <p class="mb-2">
+      {{product.description | slice:0:50}}...
+    </p>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group" #elem>
+        <button title="Посмотреть подробную информацию о чае {{product.title}}" [routerLink]="['/products', product.id.toString()]"
+                type="button"
+                class="btn btn-primary w-25 hvr-sweep-to-right border-0">
+          Подробнее
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

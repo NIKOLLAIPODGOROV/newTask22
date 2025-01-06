@@ -1,0 +1,14 @@
+<div *ngIf="product$ | async as product" class="product container container-fluid">
+  <h1 class="product__title text-center mt-5">{{product?.title}}</h1>
+  <div class="product__main-section">
+    <div class="product-item-image-container">
+      <img src="{{product?.image}}" alt="tea-{{product?.id}}" class="product-item-image">
+    </div>
+    <div>
+      <p class="fs-6">{{product?.description}}</p>
+      <div class="fs-3">Цена: {{product?.price | currency:'RUB' : 'symbol-narrow'}}</div>
+
+      <a type="button" class="btn btn-primary mt-3" [routerLink]="'/order'" (click)="toOrderPage(product)">Купить</a>
+     </div>
+  </div>
+</div>

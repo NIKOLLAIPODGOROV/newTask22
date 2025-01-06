@@ -1,0 +1,128 @@
+<div class="vh-75 d-flex justify-content-center align-items-center">
+  <div *ngIf="!isSuccessForm"
+       class="main-form wow bounceInUp container p-sm-3 p-1 mx-auto d-flex flex-column justify-content-center align-items-center gap-4">
+    <h3 class="main-form-title fw-bold">Сделать заказ</h3>
+    <form class="needs-validation col-md-6 col-10" [formGroup]="buyTeaForm">
+      <div class="col-sm col-12 mb-3">
+        <label for="product" class="form-label col-2" id="form-product">Товар</label>
+        <input type="text" class="form-control form-input" id="product"
+               formControlName="product"
+               placeholder="" value="">
+        <div class="invalid-feedback" *ngIf="buyTeaForm.get('product')?.invalid
+               && (buyTeaForm.get('product')?.touched || buyTeaForm.get('product')?.dirty)
+               && buyTeaForm.get('product')?.errors?.['required']">
+          Valid product is required.
+        </div>
+      </div>
+      <div class="mb-3 row-cols-md row-cols-sm row">
+        <div class="col-sm col-12 mb-3">
+          <label for="name" class="form-label col-2" id="form-name">Имя</label>
+          <input type="text" class="form-input form-control" id="name" formControlName="name" required>
+
+          <div class="w-100"
+               *ngIf="buyTeaForm.get('name')?.invalid && (buyTeaForm.get('name')?.touched || buyTeaForm.get('name')?.dirty)">
+            <div class="invalid-feedback" *ngIf="buyTeaForm.get('name')?.errors?.['required']">
+              Заполните имя.
+            </div>
+            <div class="invalid-feedback" *ngIf="buyTeaForm.get('name')?.errors?.['pattern']">
+              Некорректный ввод.
+            </div>
+          </div>
+        </div>
+        <div class="col-sm col-12 mb-3">
+          <label for="surname" class="form-label col-2" id="form-surname">Фамилия</label>
+          <input type="text" class="form-input form-control" id="surname" formControlName="last_name" required>
+
+          <div class="w-100"
+               *ngIf="buyTeaForm.get('last_name')?.invalid && (buyTeaForm.get('last_name')?.touched || buyTeaForm.get('last_name')?.dirty)">
+            <div class="invalid-feedback" *ngIf="buyTeaForm.get('last_name')?.errors?.['required']">
+              Заполните фамилию.
+            </div>
+            <div class="invalid-feedback" *ngIf="buyTeaForm.get('last_name')?.errors?.['pattern']">
+              Некорректный ввод.
+            </div>
+          </div>
+        </div>
+        <div class="col-sm col-12">
+          <label for="telephone" class="form-label" id="form-telephone">Телефон</label>
+          <input type="text" class="form-input form-control" id="telephone" formControlName="phone" required>
+
+          <div class="w-100"
+               *ngIf="buyTeaForm.get('phone')?.invalid && (buyTeaForm.get('phone')?.touched || buyTeaForm.get('phone')?.dirty)">
+            <div class="invalid-feedback" *ngIf="buyTeaForm.get('phone')?.errors?.['required']">
+              Заполните телефон.
+            </div>
+            <div class="invalid-feedback" *ngIf="buyTeaForm.get('phone')?.errors?.['pattern']">
+              Некорректный ввод.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row-cols-md row-cols-sm row">
+        <div class="mb-3 col-sm col-12">
+          <label for="country" class="form-label col-2" id="form-country">Страна</label>
+          <input type="text" class="form-input form-control" id="country" formControlName="country" required>
+
+          <div class="w-100"
+               *ngIf="buyTeaForm.get('country')?.invalid && (buyTeaForm.get('country')?.touched || buyTeaForm.get('country')?.dirty)">
+            <div class="invalid-feedback" *ngIf="buyTeaForm.get('country')?.errors?.['required']">
+              Заполните страну.
+            </div>
+            <div class="invalid-feedback" *ngIf="buyTeaForm.get('country')?.errors?.['pattern']">
+              Некорректный ввод.
+            </div>
+          </div>
+        </div>
+        <div class="mb-3 col-sm col-12">
+          <label for="index" class="form-label col-2" id="form-index">Индекс</label>
+          <input type="text" class="form-input form-control" id="index" maxlength="6" formControlName="zip" required>
+
+          <div class="w-100"
+               *ngIf="buyTeaForm.get('zip')?.invalid && (buyTeaForm.get('zip')?.touched || buyTeaForm.get('zip')?.dirty)">
+            <div class="invalid-feedback" *ngIf="buyTeaForm.get('zip')?.errors?.['required']">
+              Заполните индекс.
+            </div>
+            <div class="invalid-feedback" *ngIf="buyTeaForm.get('zip')?.errors?.['pattern']">
+              Некорректный ввод.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="address" class="form-label col-2" id="form-address">Адрес</label>
+          <input type="text" class="form-input form-control" id="address" formControlName="address" required>
+
+          <div class="w-100"
+               *ngIf="buyTeaForm.get('address')?.invalid && (buyTeaForm.get('address')?.touched || buyTeaForm.get('address')?.dirty)">
+            <div class="invalid-feedback" *ngIf="buyTeaForm.get('address')?.errors?.['required']">
+              Заполните адрес.
+            </div>
+            <div class="invalid-feedback" *ngIf="buyTeaForm.get('address')?.errors?.['pattern']">
+              Некорректный ввод.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm col-12 mb-3">
+        <label for="comment" class="form-label col-4" id="form-comment">Комментарий к заказу</label>
+        <input type="text" class="form-input form-control" id="comment" formControlName="comment">
+      </div>
+      <div class="row">
+        <div class="my-3">
+          <button (click)="sendOrder()" type="submit"
+            class="submit-form btn btn-primary col-xl-3 col-lg-3 col-sm-4 col-12 hvr-sweep-to-right border-0"
+            [class.disabled]="isDisabledButton">Отправить</button>
+          <div *ngIf="dangerTextForm" class="d-inline-block mx-3">
+            <p class="text-danger">Произошла ошибка. Попробуйте еще раз</p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="vh-100 d-flex justify-content-center align-items-center" *ngIf="isSuccessForm">
+    <h1 class="text-center">Спасибо за заказ!</h1>
+  </div>
+</div>
+
+
