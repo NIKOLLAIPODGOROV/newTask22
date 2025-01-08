@@ -2,7 +2,7 @@ import {Component, DoCheck} from '@angular/core';
 import {ProductService} from "../../../../services/product.service";
 
 @Component({
-  selector: 'app-catalogue',
+  selector: 'catalogue',
   templateUrl: './catalogue.component.html',
   styleUrls: ['./catalogue.component.css']
 })

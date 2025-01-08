@@ -1,9 +1,8 @@
-import {LOCALE_ID, NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FooterComponent } from './components/common/footer/footer.component';
 import { HeaderComponent } from './components/common/header/header.component';
@@ -15,15 +14,15 @@ import { OrderComponent } from './components/pages/order/order.component';
 import { ProductComponent } from './components/pages/products/product/product.component';
 import { CatalogueComponent } from './components/pages/products/catalogue/catalogue.component';
 import {ProductService} from "./services/product.service";
-import { NgbAccordionModule, NgbDropdownModule, NgbModule, NgbAccordionConfig, NgbAccordion} from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionModule, NgbCollapseModule, NgbDropdownModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {CommonModule, registerLocaleData} from "@angular/common";
 import localeRu from "@angular/common/locales/ru";
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule} from "@angular/common/http";
 import {OrderService} from "./services/order.service";
 import {FormService} from "./services/form.service";
 import {QuestionsService} from "./services/questions.service";
 
-registerLocaleData(localeRu, "ru");
+ registerLocaleData(localeRu, "ru");
 
 @NgModule({
   declarations: [
@@ -46,10 +45,9 @@ registerLocaleData(localeRu, "ru");
     HttpClientModule,
     NgbModule,
     CommonModule,
-    NgbModule,
     NgbAccordionModule,
     NgbDropdownModule,
-
+    NgbCollapseModule
   ],
   providers: [
     ProductService,
@@ -57,7 +55,7 @@ registerLocaleData(localeRu, "ru");
     FormService,
     QuestionsService,
     AppRoutingModule,
-    {provide: LOCALE_ID, useValue: 'ru'},
+  //  {provide: LOCALE_ID, useValue: 'ru'},
   ],
   bootstrap: [
     AppComponent,

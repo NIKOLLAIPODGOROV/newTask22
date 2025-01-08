@@ -12,6 +12,6 @@ export class FormService {
   }
 
   public createOrder(formData: CreateOrderInputType): Observable<CreateOrderResponseType> {
-    return this.http.post<CreateOrderResponseType>('https://testologia.site/order-tea', formData);
+    return this.http.post<CreateOrderResponseType>('https://testologia.ru/order-tea', formData);
   }
 }

@@ -1,30 +1,29 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {Component, NgModule, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {FormService} from "../../../services/form.service";
 import {OrderService} from "../../../services/order.service";
 import {CreateOrderInputType} from "../../../types/create-order-input.type";
-import {CreateOrderResponseType} from "../../../types/create-order-response.type";
-import {CommonModule} from "@angular/common";
 
 
 @Component({
-  selector: 'app-order',
+  selector: 'order',
   templateUrl: './order.component.html',
-  styleUrls: []
+  styleUrls: [],
 })
 export class OrderComponent implements OnInit {
-  public isSuccessForm = false;
-  public dangerTextForm = false;
-  public isDisabledButton = false;
+  public isSuccessForm: boolean = false;
+  public dangerTextForm: boolean = false;
+  public isDisabledButton: boolean = false;
 
    buyTeaForm: FormGroup = this.fb.group({
     product: {value: '', disabled: true},
     name: ['', [Validators.required, Validators.pattern('^([А-Яа-я]$')]],
     phone: ['', [Validators.required, Validators.pattern('^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$')]],
-    last_name: ['', [Validators.required, Validators.pattern('/^([А-Яа-я]$/')]],
+    last_name: ['', [Validators.required, Validators.pattern('^([А-Яа-я]$')]],
     country: ['', [Validators.required, Validators.pattern('^[а-яА-Я]+(?:[\\s-][а-яА-Я]+)*$')]],
-    zip: ['', [Validators.required, Validators.pattern('^\d{6}$/')]],
-    address: ['', [Validators.required, Validators.pattern('\\d{6}[\\,\\s]*[г\\.]*\\s*[А-Яа-я\\-]{2,}[\\,\\s]*[ул|пер|пр|б-р]*\\.\\s*[А-Яа-я\\-]{2,}[\\,\\s]*[д\\.]*\\s*\\d{1,3}[\\\\\\d{1,3}]*[\\,\\s\\-]*[кв\\.]*\\s*\\d{1,3}\\s*')]],
+    zip: ['', [Validators.required, Validators.pattern('^\d{6}$')]],
+    address: ['', [Validators.required, Validators.pattern(
+      '\\d{6}[\\,\\s]*[г\\.]*\\s*[А-Яа-я\\-]{2,}[\\,\\s]*[ул|пер|пр|б-р]*\\.\\s*[А-Яа-я\\-]{2,}[\\,\\s]*[д\\.]*\\s*\\d{1,3}[\\\\\\d{1,3}]*[\\,\\s\\-]*[кв\\.]*\\s*\\d{1,3}\\s*')]],
     comment: '',
   });
 

@@ -1,18 +1,18 @@
-<div class="slider wow bounceInLeft p-sm-4 p-1 my-sm-4 my-3">
+<div class="slider p-sm-4 p-1 my-sm-4 my-3">
   <div class="container-lg">
     <div class=" single-item position-relative">
-      <div class="position-relative d-flex justify-content-sm-start justify-content-center">
-        <img src="./assets/images/img.png" class="d-block w-100 h-100" alt="...">
-        <div class="position-absolute top-0 h-100 d-flex flex-column justify-content-evenly align-items-start p-xl-5 p-sm-4 p-3 gap-1 mx-sm-5 mx-3">
+      <div class="img position-relative d-flex justify-content-sm-start justify-content-center">
+        <img src="./assets/images/80.jpg" class="d-block w-100 h-100" alt="...">
+        <div
+          class="position-absolute top-0 h-100 d-flex flex-column justify-content-evenly align-items-start p-xl-5 p-sm-4 p-3 gap-1 mx-sm-5 mx-3">
           <h1 class="slide-banner-title text-black w-100 m-0 px-2 fw-bold">Скидки на травянные чаи</h1>
           <div class="slide-banner-text text-black px-2">Узнай все подробности, заполнив заявку</div>
 
-          <a [routerLink]="'/catalogue'" (click)="goToCatalogue()"
-             type="button"
-             title="Перейти к каталогу"
+          <a [routerLink]="'/catalogue'" (click)="goToCatalogue()" type="button" title="Перейти к каталогу"
              class="btn btn-primary btn-lg btn-sm mx-2 hvr-sweep-to-right border-0 col-lg-3 col-md-4 col-5">
             Каталог
           </a>
+
         </div>
       </div>
     </div>
@@ -22,10 +22,10 @@
 <div class="faq container mb-3 d-flex flex-column justify-content-center align-items-center gap-4">
 
   <div class="container container-md container-fluid d-flex flex-column gap-3 col-md-8 border-0" ngbAccordion>
-       [closeOthers]="true">
+    [closeOthers]="true">
     <h3 class="faq-main-title text-center fw-bold">Ответы на часто задаваемые вопросы</h3>
     <div class="border-0 mb-3" ngbAccordionItem *ngFor="let question of questions">
-         [collapsed]="question.question !== 'first'">
+      [collapsed]="question.question !== 'first'">
       <h2 ngbAccordionHeader>
         <button class="bg-primary text-white rounded-3" ngbAccordionButton>{{question.question}}</button>
       </h2>

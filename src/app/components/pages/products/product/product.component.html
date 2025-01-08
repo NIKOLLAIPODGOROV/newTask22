@@ -7,8 +7,7 @@
     <div>
       <p class="fs-6">{{product?.description}}</p>
       <div class="fs-3">Цена: {{product?.price | currency:'RUB' : 'symbol-narrow'}}</div>
-
-      <a type="button" class="btn btn-primary mt-3" [routerLink]="'/order'" (click)="toOrderPage(product)">Купить</a>
+      <a  class="btn btn-primary mt-3" [routerLink]="'/order'" (click)="toOrderPage(product)">Купить</a>
      </div>
   </div>
 </div>

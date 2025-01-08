@@ -9,7 +9,7 @@ export class OrderService {
     return localStorage.getItem('titleTea');
   }
 
-  public setProduct(product: ProductType): void {
+   setProduct(product: ProductType): void {
     localStorage.setItem('titleTea', product.title);
   }
 }

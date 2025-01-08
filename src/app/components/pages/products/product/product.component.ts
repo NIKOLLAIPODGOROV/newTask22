@@ -6,12 +6,12 @@ import {OrderService} from "../../../../services/order.service";
 import {ProductType} from "../../../../types/product.type";
 
 @Component({
-  selector: 'app-product',
+  selector: 'product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  public product$ = this.activatedRoute.params
+   product$ = this.activatedRoute.params
     .pipe(
       switchMap(({id}) => {
         if (!id) {

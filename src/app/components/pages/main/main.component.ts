@@ -1,18 +1,21 @@
-import {Component, OnDestroy, ViewEncapsulation} from '@angular/core';
-import {NgbAccordionModule, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {Component, NgModule, OnDestroy} from '@angular/core';
+import {
+  NgbAccordionModule,
+  NgbCollapseModule,
+  NgbDropdownModule,
+  NgbModal,
+  NgbModule
+} from "@ng-bootstrap/ng-bootstrap";
 import {ProductService} from "../../../services/product.service";
 import {QuestionsService} from "../../../services/questions.service";
 import {QuestionType} from "../../../types/question.type";
 import {PopupComponent} from "../../common/popup/popup.component";
-import {RouterLinkWithHref} from "@angular/router";
-import { CommonModule } from '@angular/common';
+
 
 @Component({
-  selector: 'app-main',
+  selector: 'main',
   templateUrl: './main.component.html',
-  encapsulation: ViewEncapsulation.None,
 //  standalone: true,
-
 })
 export class MainComponent implements OnDestroy {
   private timerPopup = setTimeout(() => {
