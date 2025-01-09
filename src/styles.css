@@ -5,7 +5,7 @@ body {
 }
 
 .accordion-button::after {
-  filter: invert();
+  filter: invert(1);
 }
 
 .accordion-button:not(.collapsed)::after {

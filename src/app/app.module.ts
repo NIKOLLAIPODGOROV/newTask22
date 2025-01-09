@@ -27,7 +27,7 @@ import {QuestionsService} from "./services/questions.service";
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
+   MainComponent,
     FooterComponent,
     HeaderComponent,
     ProductCardComponent,

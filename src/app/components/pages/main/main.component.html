@@ -19,23 +19,20 @@
   </div>
 </div>
 
-<div class="faq container mb-3 d-flex flex-column justify-content-center align-items-center gap-4">
-
-  <div class="container container-md container-fluid d-flex flex-column gap-3 col-md-8 border-0" ngbAccordion>
-    [closeOthers]="true">
-    <h3 class="faq-main-title text-center fw-bold">Ответы на часто задаваемые вопросы</h3>
-    <div class="border-0 mb-3" ngbAccordionItem *ngFor="let question of questions">
-      [collapsed]="question.question !== 'first'">
-      <h2 ngbAccordionHeader>
-        <button class="bg-primary text-white rounded-3" ngbAccordionButton>{{question.question}}</button>
-      </h2>
-      <div ngbAccordionCollapse>
-        <div ngbAccordionBody>
-          <ng-template>
-            {{question.answer}}
-          </ng-template>
-        </div>
-      </div>
+<div class="d-grid gap-2">
+    <div class="answers-tittle mb-5 text-center">
+      <h2 class="fw-bold">Ответы на часто задаваемые вопросы</h2>
     </div>
-  </div>
+<div class="border-0 mb-0" *ngFor="let question of questions; index as i">
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-{{i}}" type="light" class=" btn bg-primary text-white d-flex text-center col-md-5 col-10 mb-1 justify-content-center align-items-center mx-auto">
+    <ngb-panel  title="{{ question.question }}" id="ngb-panel-{{i}}" class="d-flex btn  text-white ">
+      <ng-template ngbPanelContent>
+        {{question.answer}}
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
 </div>
+</div>
+
+
+
