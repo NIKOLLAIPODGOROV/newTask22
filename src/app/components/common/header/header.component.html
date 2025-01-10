@@ -36,7 +36,8 @@
           </button>
         </div>
         <a title="Начать поиск чая" class="btn btn-outline-primary" type="button" [routerLink]="'/catalogue'" routerLinkActive="active"
-           (click)="searchProduct(searchInputElement.value)">Найти</a>
+           *ngIf="searchInputElement.value"
+           (click)="searchProduct(searchInputElement.value) ; searchInputElement.value = ''">Найти</a>
       </div>
     </div>
   </div>

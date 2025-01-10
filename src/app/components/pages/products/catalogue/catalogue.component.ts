@@ -1,4 +1,4 @@
-import {Component, DoCheck} from '@angular/core';
+import {Component, DoCheck, OnDestroy} from '@angular/core';
 import {ProductService} from "../../../../services/product.service";
 
 @Component({
@@ -11,6 +11,7 @@ export class CatalogueComponent implements DoCheck {
   public isShowLoader$ = this.productService.isShowLoader$;
 
   constructor(private productService: ProductService) {
+
   }
 
   ngDoCheck() {

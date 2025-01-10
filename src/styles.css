@@ -4,14 +4,6 @@ body {
   min-height: 100vh;
 }
 
-.accordion-button::after {
-  filter: invert(1);
-}
-
-.accordion-button:not(.collapsed)::after {
-  background-image: var(--bs-accordion-btn-icon);
-}
-
 input.ng-invalid.ng-dirty,
 input.ng-invalid.ng-touched {
   border-color: red;
@@ -19,4 +11,22 @@ input.ng-invalid.ng-touched {
 
 .invalid-feedback {
   display: block;
+}
+.button .accordion-button {
+  background-color: #0080FF;
+}
+
+.accordion-button {
+  color: white;
+  background-color: #0080FF;
+  border-radius: 5px;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: white;
+  background-color: #0080FF;
+  border-radius: 5px;
 }

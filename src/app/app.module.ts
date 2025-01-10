@@ -15,7 +15,7 @@ import { ProductComponent } from './components/pages/products/product/product.co
 import { CatalogueComponent } from './components/pages/products/catalogue/catalogue.component';
 import {ProductService} from "./services/product.service";
 import { NgbAccordionModule, NgbCollapseModule, NgbDropdownModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {CommonModule, registerLocaleData} from "@angular/common";
+import { CommonModule, registerLocaleData} from "@angular/common";
 import localeRu from "@angular/common/locales/ru";
 import { HttpClientModule} from "@angular/common/http";
 import {OrderService} from "./services/order.service";

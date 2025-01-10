@@ -7,9 +7,13 @@ import {ProductService} from "../../../services/product.service";
 })
 export class HeaderComponent {
   public isMenuOpen = false;
-  constructor(private productService: ProductService) {
+
+  constructor( private productService: ProductService) {
+
   }
   public searchProduct(title?: string): void {
-    this.productService.setSearchTitle(title)
+
+      this.productService.setSearchTitle(title)
   }
+
 }
